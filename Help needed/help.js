@@ -68,9 +68,9 @@ document.getElementById('type').addEventListener('change', function() {
     const selectedType = this.value;
 
     if (selectedType === 'other') {
-        otherDisasterContainer.style.display = 'block'; // Show the textarea
+        otherDisasterContainer.style.display = 'block'; 
     } else {
-        otherDisasterContainer.style.display = 'none'; // Hide the textarea
+        otherDisasterContainer.style.display = 'none'; 
     }
 });
 function fun() {
@@ -79,10 +79,10 @@ function fun() {
     const logo = document.getElementById("logoImg");
   
     if (document.body.classList.contains("dark-mode")) {
-      logo.src = "C:/Users/nimis/OneDrive/Pictures/anzen dark.jpg"; // 🔁 Change this path to your dark logo
+      logo.src = "anzen dark.jpg"; 
 
     } else {
-      logo.src = "C:/Users/nimis/OneDrive/Pictures/anzen.jpg"; // 🔁 Default light mode logo
+      logo.src = "anzen.jpg";
     }
   }
 
