@@ -1,4 +1,4 @@
-# 🌍 Anzen
+# 🌍 Anzen ![Anzen]([https://github.com/KV-ashu/Anzen/blob/main/images/Flowchart.jpg](https://github.com/KV-ashu/Anzen/blob/main/images/anzen%20dark.jpg))
 
 A real-time, crowdsourced disaster management platform connecting affected individuals, volunteers, and NGOs to ensure rapid response, coordinated relief, and effective communication during and after disasters.
 
