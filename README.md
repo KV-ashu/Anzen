@@ -20,16 +20,18 @@ A real-time, crowdsourced disaster management platform connecting affected indiv
 
 - **Frontend**: HTML5, CSS3, JavaScript
 - **Map Visualization**: Leaflet.js
-- **Backend**: Node.js 
+- **Backend**: Node.js
+- **Database**: MongoDB
 
 ---
 
 ## 🔧 Use Cases
 
 - **Individuals** can request emergency aid during disasters.
-- **Citizens & Volunteers** can browse help requests and offer support.
+- **Citizens & Volunteers** can browse help requests and offer support as they see fit.
 - **NGOs** can register and coordinate large-scale relief operations.
 - **Authorities** can monitor disaster zones and plan evacuation or supply chains.
+- **Real-time Map** shows current disasters.
 
 ---
 
