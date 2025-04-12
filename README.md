@@ -43,7 +43,7 @@ A real-time, crowdsourced disaster management platform connecting affected indiv
 
 ## 📸 Preview
 
-![Project Flowchart](./assets/disaster-flowchart.png)
+![Project Flowchart](https://github.com/KV-ashu/Anzen/blob/main/images/Flowchart.jpg)
 
 ---
 
