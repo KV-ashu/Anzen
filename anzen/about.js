@@ -4,10 +4,10 @@ function fun() {
     const logo = document.getElementById("logoImg");
   
     if (document.body.classList.contains("dark-mode")) {
-      logo.src = "C:/Users/nimis/OneDrive/Pictures/anzen dark.jpg"; 
+      logo.src = "anzend.jpg"; 
 
     } else {
-      logo.src = "C:/Users/nimis/OneDrive/Pictures/anzen.jpg";
+      logo.src = "anzen.jpg";
     }
   }
   
