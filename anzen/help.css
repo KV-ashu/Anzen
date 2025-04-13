@@ -52,27 +52,76 @@
     display: none;
 }
 
-/* Logo styles */
-.logo {
-    transition: opacity 0.3s ease;
-}
-
-[data-theme="dark"] .light-logo {
-    display: none;
-}
-
-[data-theme="dark"] .dark-logo {
+header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5rem;
+    background: #ffffff;
+    z-index: 1;
+    transition: 0.5s;
+  }
+  
+  header.scroll {
+    position: fixed;
+    top: -7rem;
+    left: 0;
+    width: 100%;
+    height: 7rem;
+    background: #000000;
+    z-index: 1;
+    transition: 0.5s;
+  }
+  
+  .logo {
+    top: 7%;
+    position: absolute;
+    left: 10%;
+    bottom: 1rem;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    color: rgb(255, 255, 255);
+  }
+  
+  nav {
+    position: absolute;
+    left: 30%;
+    bottom: 1rem;
+    width: 60%;
+  }
+  
+  nav ul {
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    color: rgb(0, 0, 0);
+  }
+  
+  nav ul li a::after {
+    content: '';
     display: block;
-}
-
-[data-theme="light"] .light-logo {
-    display: block;
-}
-
-[data-theme="light"] .dark-logo {
-    display: none;
-}
-
+    width: 0;
+    height: 1px;
+    background: rgb(0, 0, 0);
+    transition: width 0.3s;
+  }
+  
+  nav ul li a:hover::after {
+    width: 100%;
+  }
+  
+  .dark {
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
 /* Apply theme colors to existing elements */
 body {
     background-color: var(--primary-bg);
@@ -871,3 +920,43 @@ a:hover ~ .cursor-trail,
     color: var(--text-color);
     opacity: 0.7;
 }
+body.dark-mode {
+    background-color: black;
+    color: white;
+  }
+  
+  body.dark-mode .header {
+    background-color: black;
+  }
+  
+  body.dark-mode .sec {
+    background-color: black;
+    color: black;
+  }
+  
+  body.dark-mode .se {
+    background-color: black;
+  }
+  
+  body.dark-mode .probs h2 {
+    color: white;
+  }
+  
+  body.dark-mode nav ul li a {
+    color: white;
+  }
+  body.dark-mode nav ul li a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 1px;
+    background: rgb(255, 255, 255);
+    transition: width 0.3s;
+  }
+  
+  body.dark-mode nav ul li a:hover::after {
+    width: 100%;
+  }
+  body.dark-mode .quote-container{
+    background: rgb(128, 128, 128);
+  }
