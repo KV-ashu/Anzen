@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1>Prediction Results</h1>
+    <div class="threats">
+        <div class="threat">
+            <h2>Earthquake</h2>
+            <div class="circular-bar {{ eq_class }}" style="--percentage: {{ eq_chance }}%;" data-percentage="{{ eq_chance }}"></div>
+        </div>
+        <div class="threat">
+            <h2>Flood</h2>
+            <div class="circular-bar {{ flood_class }}" style="--percentage: {{ flood_chance }}%;" data-percentage="{{ flood_chance }}"></div>
+        </div>
+        <div class="threat">
+            <h2>Hurricane</h2>
+            <div class="circular-bar {{ hurricane_class }}" style="--percentage: {{ hurricane_chance }}%;" data-percentage="{{ hurricane_chance }}"></div>
+        </div>
+    </div>
+    <h2>Additional Data</h2>
+    <h3>Recent Earthquakes</h3>
+    <ul>
+        {% for eq in recent_earthquakes %}
+        <li>Magnitude: {{ eq.mag }}, Place: {{ eq.place }}, Time: {{ eq.time }}</li>
+        {% endfor %}
+    </ul>
+    <h3>Current Weather</h3>
+    <p>Temperature: {{ current_weather.temp }} °C</p>
+    <p>Wind Speed: {{ current_weather.wind_speed }} m/s</p>
+    <p>Pressure: {{ current_weather.pressure }} hPa</p>
+    <p>Humidity: {{ current_weather.humidity }} %</p>
+</body>
+</html>
