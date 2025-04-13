@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Natural Disaster Risk Assessment</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <!-- Timestamp and User Info Header -->
+        <div class="timestamp-header">
+            <div class="timestamp-info">
+                <span>Current Time (UTC): <strong>2025-04-13 08:04:30</strong></span>
+            </div>
+            <div class="timestamp-info">
+                <span>User: <strong>KV-ashu</strong></span>
+            </div>
+        </div>
+
+        <h1>Natural Disaster Risk Assessment</h1>
+        
+        <div class="search-container">
+            <input type="text" id="location" placeholder="Enter location (e.g., New York, NY)" />
+            <button onclick="getPrediction()">Analyze Risks</button>
+        </div>
+
+        <div id="loading" style="display: none;">
+            <div class="loading-spinner"></div>
+            <div class="loading-text">Analyzing location data...</div>
+        </div>
+
+        <div id="results" style="display: none;">
+            <div class="threat-containers">
+                <div class="threat-box">
+                    <h4>Earthquake Risk</h4>
+                    <canvas id="earthquakeBar"></canvas>
+                    <div id="earthquake-details" class="details"></div>
+                </div>
+                <div class="threat-box">
+                    <h4>Flood Risk</h4>
+                    <canvas id="floodBar"></canvas>
+                    <div id="flood-details" class="details"></div>
+                </div>
+                <div class="threat-box">
+                    <h4>Hurricane Risk</h4>
+                    <canvas id="hurricaneBar"></canvas>
+                    <div id="hurricane-details" class="details"></div>
+                </div>
+            </div>
+            
+            <div class="detailed-info">
+                <h3>Detailed Information</h3>
+                <div class="info-card-container">
+                    <!-- Location Details Card -->
+                    <div class="info-card">
+                        <h4>Location Details</h4>
+                        <div class="info-card-content">
+                            <div id="location-details"></div>
+                        </div>
+                    </div>
+
+                    <!-- Weather Details Card -->
+                    <div class="info-card">
+                        <h4>Weather Information</h4>
+                        <div class="info-card-content">
+                            <div id="weather-details"></div>
+                        </div>
+                    </div>
+
+                    <!-- Seismic Details Card -->
+                    <div class="info-card">
+                        <h4>Seismic Activity</h4>
+                        <div class="info-card-content">
+                            <div id="seismic-details"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="error" class="error" style="display: none;"></div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
