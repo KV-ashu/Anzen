@@ -50,7 +50,7 @@ A real-time, crowdsourced disaster management platform connecting affected indiv
 
 ## 📸 Preview
 
-![Project Flowchart](flowchart.jpg)
+![Project Flowchart](Flowchart.jpg)
 
 ---
 
