@@ -4,7 +4,7 @@ function fun() {
     const logo = document.getElementById("logoImg");
   
     if (document.body.classList.contains("dark-mode")) {
-      logo.src = "anzen dark.jpg"; 
+      logo.src = "anzend.jpg"; 
 
     } else {
       logo.src = "anzen.jpg"; 
