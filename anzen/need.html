@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Help Needed</title>
+  <link rel="stylesheet" href="need.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  
+</head>
+<body>
+  <header class="header">
+    <div class="logo"><img id="logoImg" src="anzen.jpg" width="120px">
+    </div>
+    <nav>
+        <ul>
+            <li><a href="home.htmk">Home</a></li>
+            <li><a href="need.html">Need Help</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="help.html">Want to Help</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <button id="dark" class="dark" onclick="fun()">🌙</button>
+        </ul>
+        
+    </nav></header>
+
+  <main>
+    <div id="map" style="height: 500px;"></div>
+<button id="liveBtn" class="map-button">Live</button>
+  </main>
+  <section class="sec">
+    <div class="form-container">
+      <form id="reportForm">
+        <button id="detailsBtn">Your Details</button>
+
+  <div class="modal" id="authModal">
+    <div class="container">
+      <span class="close-btn" onclick="closeModal()">×</span>
+      <div class="form-container">
+        <h2>Sign In</h2>
+        <input type="email" placeholder="Email" id="signin-email" class="in" />
+        <input type="password" placeholder="Password" id="signin-password" class="in" />
+        <button onclick="handleSignIn()" class="hn">Sign In</button>
+      </div>
+    </div>
+  </div>
+        <h2>Report an Issue</h2>
+        <label for="type">Type of Disaster:</label>
+        <select id="type" required>
+          <option value="disaster">Earthquake</option>
+          <option value="medical">Flood</option>
+          <option value="resource">Tsunami</option>
+          <option value="other">Other</option>
+        </select><br>
+        <div id="otherDisasterContainer" style="display: none;">
+          <label for="otherDisaster">Please specify:</label><br>
+          <textarea id="otherDisaster" rows="1" placeholder="Describe the disaster..."></textarea>
+        </div>
+        <label for="helpp">Type of Help needed:</label>
+        <select id="helpp" required>
+          <option value="resource">Resources</option>
+          <option value="Shelter">Shelter</option>
+          <option value="evacuation">Evacuation</option>
+          <option value="med help">Medical Help</option>
+        </select>
+        <label for="description">Description:</label>
+        <textarea id="description" rows="4" placeholder="Describe the fatality, current condition..." required></textarea>
+
+        <label for="latitude">Latitude:</label>
+        <input type="number" id="latitude" step="any" placeholder="Click on the map to auto-fill" required>
+
+        <label for="longitude">Longitude:</label>
+        <input type="number" id="longitude" step="any" placeholder="Click on the map to auto-fill" required>
+
+        <button type="submit" class="b">Submit Report</button>
+      </form>
+    </div>
+  </section class="se">
+    <div class="probs">
+      <h2>Reported Issues</h2>
+      <div id="issueCards" class="cards-container">
+        <div class="issue-card">
+          <h3>Delhi</h3>
+          <p>Water Shortage</p>
+          <p><strong>Assistance required:</strong> Resources</p>
+          <button class="help"><a href="help.html">HELP</a></button>
+        </div>
+        <div class="issue-card">
+          <h3>Mumbai</h3>
+          <p>Flood</p>
+          <p><strong>Assistance required:</strong> Shelter, Resource, Evacuation</p>
+          <button class="help"><a href="help.html">HELP</a></button>
+        </div>
+        <div class="issue-card">
+          <h3>Kolkata</h3>
+          <p>Earthquake</p>
+          <p><strong>Assistance required:</strong> Shelter, Resource</p>
+          <button class="help"><a href="help.html">HELP</a></button>
+        </div>
+        <div class="issue-card">
+          <h3>Chennai</h3>
+          <p>Tsunami</p>
+          <p><strong>Assistance required:</strong> Shelter, Resource, Evacuation</p>
+          <button class="help"><a href="help.html">HELP</a></button>
+        </div>
+        <div class="issue-card">
+          <h3>Hyderabad</h3>
+          <p>Water Shortage</p>
+          <p><strong>Assistance required:</strong> Resource</p>
+          <button class="help"><a href="help.html">HELP</a></button>
+        </div>
+      </div>
+    </div>
+ 
+  
+
+    <footer>
+      <div class="footer-content">
+          <div class="footer-section">
+              <h3>About ANZEN</h3>
+              <p>Empowering communities through disaster preparedness and response.</p>
+          </div>
+          <div class="footer-section">
+              <h3>Quick Links</h3>
+              <ul>
+                  <li><a href="home.html">Home</a></li>
+                  <li><a href="need.html">Need Help</a></li>
+                  <li><a href="about.html">About</a></li>
+                  <li><a href="help.html">Volunteer</a></li>
+              </ul>
+          </div>
+          <div class="footer-section">
+              <h3>Contact Us</h3>
+              <p>Email: contact@anzen.org</p>
+              <p>Phone: +1 (555) 123-4567</p>
+          </div>
+      </div>
+      <div class="footer-bottom">
+          <p>&copy; 2025 ANZEN. All rights reserved.</p>
+      </div>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="need.js"></script>
+</body>
+</html>
