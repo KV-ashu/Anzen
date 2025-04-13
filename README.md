@@ -54,4 +54,6 @@ A real-time, crowdsourced disaster management platform connecting affected indiv
 
 ---
 
-![1](screenshots/1.jpg)
+## 🌐 Our Website
+
+![1](screenshots/7.jpg)
