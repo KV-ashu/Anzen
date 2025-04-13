@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>User Profile | KV-ashu</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-bg: #0a0a0a;
+      --secondary-bg: #111;
+      --accent-bg: #1a1a1a;
+      --text-primary: #ffffff;
+      --text-secondary: #a0a0a0;
+      --border-color: #2a2a2a;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: var(--primary-bg);
+      color: var(--text-primary);
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+    }
+
+    .profile-container {
+      background: var(--secondary-bg);
+      border-radius: 20px;
+      padding: 3rem;
+      width: 90%;
+      max-width: 600px;
+      box-shadow: 0 0 10px  #fff;
+      border: 1px solid var(--border-color);
+    }
+
+    .profile-header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .profile-avatar {
+      width: 100px;
+      height: 100px;
+      background: var(--accent-bg);
+      border-radius: 50%;
+      margin: 0 auto 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+      font-weight: 600;
+      border: 2px solid var(--border-color);
+    }
+
+    .timestamp {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      margin-top: 0.5rem;
+    }
+
+    .profile-details {
+      background: var(--accent-bg);
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .detail-item {
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 1rem;
+    }
+
+    .detail-item:last-child {
+      margin-bottom: 0;
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .detail-label {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .detail-value {
+      font-size: 1.1rem;
+      font-weight: 500;
+    }
+
+    .button-group {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+    }
+
+    .btn {
+      padding: 0.8rem 2rem;
+      border-radius: 8px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-size: 1rem;
+    }
+
+    .btn-primary {
+      background: var(--text-primary);
+      color: var(--primary-bg);
+      border: none;
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--text-primary);
+      border: 1px solid var(--text-primary);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn-primary:hover {
+      background: var(--text-secondary);
+    }
+
+    .btn-secondary:hover {
+      background: var(--accent-bg);
+    }
+
+    .loading {
+      text-align: center;
+      color: var(--text-secondary);
+      font-style: italic;
+    }
+
+    .error-message {
+      color: #ff4444;
+      text-align: center;
+      margin-bottom: 1rem;
+      padding: 0.5rem;
+      background: rgba(255, 68, 68, 0.1);
+      border-radius: 8px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="profile-container">
+    <div id="errorMessage" class="error-message"></div>
+    
+    <div class="profile-header">
+      <div class="profile-avatar" id="userInitial"></div>
+      <h1>Welcome, <span id="userName"></span></h1>
+      <div class="timestamp">Last login: 2025-04-13 07:34:51 UTC</div>
+    </div>
+
+    <div class="profile-details">
+      <div class="detail-item">
+        <div class="detail-label">Email</div>
+        <div class="detail-value" id="userEmail">Loading...</div>
+      </div>
+      <div class="detail-item">
+        <div class="detail-label">Phone Number</div>
+        <div class="detail-value" id="userPhone">Loading...</div>
+      </div>
+      <div class="detail-item">
+        <div class="detail-label">About</div>
+        <div class="detail-value" id="userAbout">Loading...</div>
+      </div>
+    </div>
+
+    <div class="button-group">
+      <button class="btn btn-primary" onclick="goToHome()">Home</button>
+      <button class="btn btn-secondary" onclick="logout()">Predict</button>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      loadUserProfile();
+    });
+
+    function showError(message) {
+      const errorDiv = document.getElementById('errorMessage');
+      errorDiv.textContent = message;
+      errorDiv.style.display = 'block';
+    }
+
+    function hideError() {
+      document.getElementById('errorMessage').style.display = 'none';
+    }
+
+    async function loadUserProfile() {
+  const token = localStorage.getItem("authToken");
+  
+  if (!token) {
+    window.location.href = "index.html";
+    return;
+  }
+
+  try {
+    const response = await fetch("/profile", {
+      method: 'GET',
+      headers: {
+        'Authorization': Bearer ${token}, // Corrected backticks for template string
+        'Content-Type': 'application/json'
+      }
+    });
+
+    if (!response.ok) {
+      throw new Error('Failed to fetch profile data');
+    }
+
+    const data = await response.json();
+    
+    // Update profile information
+    const username = data.email.split('@')[0];
+    document.getElementById("userName").textContent = username;
+    document.getElementById("userInitial").textContent = username[0].toUpperCase();
+    document.getElementById("userEmail").textContent = data.email;
+    document.getElementById("userPhone").textContent = data.phone;
+    document.getElementById("userAbout").textContent = data.about || "No description provided";
+    
+    hideError();
+  } catch (error) {
+    console.error('Profile loading error:', error);
+    showError('Failed to load profile data. Please try again.');
+  }
+}
+
+    function logout() {
+      localStorage.removeItem("authToken");
+      window.location.href = "predict.html";
+    }
+
+    function goToHome() {
+      window.location.href = "index.html";
+    }
+
+    // Check token validity periodically
+    setInterval(() => {
+      const token = localStorage.getItem("authToken");
+      if (!token) {
+        window.location.href = "index.html";
+      }
+    }, 60000); // Check every minute
+  </script>
+</body>
+</html>
