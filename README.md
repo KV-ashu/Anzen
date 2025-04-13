@@ -1,5 +1,5 @@
 # 🌍 Anzen 
-<img src="https://github.com/KV-ashu/Anzen/blob/main/images/anzen%20dark.jpg" alt="Disaster Flowchart" width="300">
+<img src="anzen dark.jpg" alt="Disaster Flowchart" width="300">
 
 A real-time, crowdsourced disaster management platform connecting affected individuals, volunteers, and NGOs to ensure rapid response, coordinated relief, and effective communication during and after disasters.
 
@@ -50,7 +50,7 @@ A real-time, crowdsourced disaster management platform connecting affected indiv
 
 ## 📸 Preview
 
-![Project Flowchart](https://github.com/KV-ashu/Anzen/blob/main/images/Flowchart.jpg)
+![Project Flowchart](flowchart.jpg)
 
 ---
 
