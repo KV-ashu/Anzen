@@ -960,3 +960,54 @@ body.dark-mode {
   body.dark-mode .quote-container{
     background: rgb(128, 128, 128);
   }
+
+  footer {
+    background: black;
+    color: white;
+    padding: 4rem 5%;
+    margin-top: 4rem;
+  }
+  
+  .footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .footer-section h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+  }
+  
+  .footer-section p {
+    margin-bottom: 0.5rem;
+    opacity: 0.9;
+  }
+  
+  .footer-section ul {
+    list-style: none;
+  }
+  
+  .footer-section ul li {
+    margin-bottom: 0.5rem;
+  }
+  
+  .footer-section a {
+    text-decoration: none;
+    opacity: 0.9;
+    color: white;
+  }
+  
+  .footer-section a:hover {
+    opacity: 1;
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
