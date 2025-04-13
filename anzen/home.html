@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="ai.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Condensed:wght@400;700&family=Anton&family=Space+Grotesk:wght@500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <title>ANZEN - Disaster Preparedness</title>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="anzen.jpg" alt="ANZEN Logo">
+        </div>
+        <button class="menu-toggle" aria-label="Toggle Menu">
+            <i class='bx bx-menu'></i>
+        </button>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="need.html">Need Help</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="help.html">Want to Help</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="#" id="ai-chat-toggle">AI Assistant</a></li>
+                <li><span class="open-modal" onclick="openModal()"> <img src="user.png" alt="Profile"  width="40px"></span></li>
+            </ul>
+        </nav>
+        <!-- AI Assistant Iframe Container -->
+<!-- AI Assistant Iframe Container -->
+<div id="ai-chat-container" style="display: none; position: absolute; right: 10px; top: 70px; z-index: 1000; background: white; border-radius: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.2); overflow: hidden;">
+    <div style="display: flex; justify-content: flex-end; padding: 5px; background: #f5f5f5; border-bottom: 1px solid #ddd;">
+        <button id="ai-chat-close" style="background: none; border: none; font-size: 20px; cursor: pointer;">&times;</button>
+    </div>
+    <iframe
+        src="https://www.chatbase.co/chatbot-iframe/aQ1qZCgtA_FbCHP_rDphM"
+        width="400px"
+        style="height: 600px; border: none;"
+        frameborder="0"
+    ></iframe>
+</div>
+
+
+    </header>
+    <div class="modal" id="authModal">
+        <div class="container1" id="signin">
+          <div class="close-btn" onclick="closeModal()">×</div>
+          <h2>Sign In</h2>
+          <input type="email" placeholder="Email" id="signin-email" />
+          <input type="password" placeholder="Password" id="signin-password" />
+          <button onclick="handleSignIn()">Sign In</button>
+          <div class="toggle" onclick="toggleForm()">Don't have an account? Sign Up</div>
+        </div>
+    
+        <div class="container1" id="signup" style="display: none;">
+          <div class="close-btn" onclick="closeModal()">×</div>
+          <h2>Sign Up</h2>
+          <input type="email" placeholder="Email" id="signup-email" />
+          <input type="tel" placeholder="Phone Number" id="signup-phone" maxlength="10"/>
+          <textarea id="signup-about" placeholder="About yourself"></textarea>
+          <input type="password" placeholder="Password" id="signup-password" />
+          <input type="password" placeholder="Confirm Password" id="signup-confirm" />
+          <button onclick="handleSignUp()">Sign Up</button>
+          <div class="toggle" onclick="toggleForm()">Already have an account? Sign In</div>
+        </div>
+      </div>
+    
+      <div class="profile" id="profile">
+        <h2>Your Profile</h2>
+        <p><strong>Email:</strong> <span id="profile-email"></span></p>
+        <p><strong>Phone:</strong> <span id="profile-phone"></span></p>
+        <p><strong>About:</strong> <span id="profile-about"></span></p>
+      </div>
+
+    <main>
+        <section class="one" id="home">
+            <div class="container">
+                <video autoplay muted loop playsinline>
+                    <source src="generated-image-72fd3091-c62b-4c6f-93d7-9308f168a2e0.mp4" type="video/mp4">
+                </video>
+                <div class="two">
+                    <h1>ANZEN</h1>
+                    <p class="tagline">Empowering Communities Through Disaster Preparedness</p>
+                    <a href="vol.html" class="btn">Get Started</a>
+                </div>
+            </div>
+        </section>
+
+        
+
+        <section class="stats">
+            <div class="three">
+                <div id="counter">0+</div>
+                <div class="label">Lives Saved</div>
+            </div>
+            <div class="four">
+                <div id="counter1">7500+</div>
+                <div class="label">People Connected</div>
+            </div>
+        </section>
+    </main>
+<!-- Disaster Prediction Button -->
+<div class="disaster-prediction-container">
+    <button class="disaster-prediction-btn" id="disaster-prediction-btn">
+        <div class="prediction-icon">
+            <i class='bx bx-radar'></i>
+        </div>
+        <div class="prediction-text">
+            <span class="prediction-title" onclick="goToHome()">Check Risk Levels</span>
+            <!-- <span class="prediction-subtitle">Check Risk Levels</span> -->
+        </div>
+        <div class="prediction-indicator">
+            <div class="indicator-dot"></div>
+        </div>
+    </button>
+</div>
+    <!-- AI Chat Container -->
+    
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About ANZEN</h3>
+                <p>Empowering communities through disaster preparedness and response.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="help.html">Need Help</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="vol.html">Volunteer</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: contact@anzen.org</p>
+                <p>Phone: +1 (555) 123-4567</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 ANZEN. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="home.js"></script>
+    <script>
+
+function goToHome() {
+      window.location.href = "../templates/index.html";
+    }
+        const aiToggle = document.getElementById('ai-chat-toggle');
+        const aiContainer = document.getElementById('ai-chat-container');
+        const aiClose = document.getElementById('ai-chat-close');
+    
+        aiToggle.addEventListener('click', function (e) {
+            e.preventDefault();
+            aiContainer.style.display = (aiContainer.style.display === 'none' || aiContainer.style.display === '') ? 'block' : 'none';
+        });
+    
+        aiClose.addEventListener('click', function () {
+            aiContainer.style.display = 'none';
+        });
+    </script>
+    
+    
+</body>
+</html>
