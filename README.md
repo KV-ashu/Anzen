@@ -7,6 +7,8 @@ A real-time, crowdsourced disaster management platform connecting affected indiv
 
 ## 🚀 Features
 
+- 🤖 **AI Chtabot** - Helps victims stuck in disasters by providing them safety methods.
+- 🪄 **AI Disaster Predictor** - Predicts the chances of disasters hitting a region based on past data and evnironmental factors.
 - 📍 **Live Disaster Map** – Visualizes real-time disaster zones and reported issues.
 - 🆘 **Request Help** – Victims can request urgent aid for food, shelter, rescue, or medical support.
 - 👐 **Offer Help** – Volunteers can offer assistance through donations, shelter, supplies, or manpower.
@@ -22,6 +24,7 @@ A real-time, crowdsourced disaster management platform connecting affected indiv
 - **Map Visualization**: Leaflet.js
 - **Backend**: Node.js
 - **Database**: MongoDB
+- **AI**: Python, chatbox
 
 ---
 
@@ -32,6 +35,7 @@ A real-time, crowdsourced disaster management platform connecting affected indiv
 - **NGOs** can register and coordinate large-scale relief operations.
 - **Authorities** can monitor disaster zones and plan evacuation or supply chains.
 - **Real-time Map** shows current disasters.
+- **AI chatbot** can be used by users to find the best course of action till help arrives.
 
 ---
 
