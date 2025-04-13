@@ -59,14 +59,25 @@ A real-time, crowdsourced disaster management platform connecting affected indiv
 ![1](screenshots/6.jpg)
 
 ![2](screenshots/13.jpg)
+
 ![3](screenshots/12.jpg)
+
 ![4](screenshots/11.jpg)
+
 ![5](screenshots/3.jpg)
+
 ![6](screenshots/2.jpg)
+
 ![7](screenshots/1.jpg)
+
 ![8](screenshots/4.jpg)
+
 ![9](screenshots/7.jpg)
+
 ![10](screenshots/5.jpg)
+
 ![11](screenshots/8.jpg)
+
 ![12](screenshots/9.jpg)
+
 ![13](screenshots/10.jpg)
