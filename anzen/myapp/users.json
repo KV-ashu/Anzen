@@ -1,0 +1,46 @@
+[{
+  "_id": {
+    "$oid": "67fa8dc3f979779e765700bc"
+  },
+  "email": "ashu@gmail.com",
+  "phone": "1101010111",
+  "about": "ashu",
+  "password": "$2b$10$XJ2aPzLKKjQbqS0IaxJoAejqe6t43PpuJhQVc4QUApP6q4pAhnhBm",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67fa94a663b5a78101405000"
+  },
+  "email": "kumar@gmail.com",
+  "phone": "5050505050",
+  "password": "$2b$10$HM42gRSrUs.XH5eN9gMsAOmoaefYRPQMaXxdcqcCn1sqMeKZjsYI6",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67fa963363b5a78101405006"
+  },
+  "email": "sivanshu@gmail.com",
+  "phone": "6060606060",
+  "password": "$2b$10$jLUeSFymZ7K3mHt1MnkqtO.oGABzrD2GT8p1QqGef/NS9CTO51q/K",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67faa12b7466d4aef8f3a0b0"
+  },
+  "email": "zaid@gmail.com",
+  "phone": "8080808080",
+  "password": "$2b$10$Wd8FVOo7Rotx3qkME0QQ7e/YHr3EAnyNnKR9I1aZQE7eRWllzUsvS",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67fb667e0177180cac81a6ed"
+  },
+  "email": "harsh3237@gmail.com",
+  "phone": "7070377741",
+  "password": "$2b$10$68oQ.jbxIM1zt5D9hrgeiOut19HPRVBAaK8R.k4XHh.vx4y0e80DC",
+  "__v": 0
+}]
