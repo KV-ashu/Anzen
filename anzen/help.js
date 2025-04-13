@@ -1,82 +1,15 @@
-// Dark mode functionality
-function toggleDarkMode() {
-    const html = document.documentElement;
-    const currentTheme = html.getAttribute('data-theme');
-    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-    
-    // Update theme attribute
-    html.setAttribute('data-theme', newTheme);
-    
-    // Update logo visibility
-    const lightLogo = document.querySelector('.light-logo');
-    const darkLogo = document.querySelector('.dark-logo');
-    
-    if (newTheme === 'dark') {
-        lightLogo.style.display = 'none';
-        darkLogo.style.display = 'block';
-    } else {
-        lightLogo.style.display = 'block';
-        darkLogo.style.display = 'none';
-    }
-    
-    // Update theme icon
-    const sunIcon = document.querySelector('.theme-toggle .sun');
-    const moonIcon = document.querySelector('.theme-toggle .moon');
-    
-    if (newTheme === 'dark') {
-        sunIcon.style.display = 'none';
-        moonIcon.style.display = 'block';
-    } else {
-        sunIcon.style.display = 'block';
-        moonIcon.style.display = 'none';
-    }
-    
-    // Save theme preference
-    localStorage.setItem('theme', newTheme);
-}
+function fun() {
+    document.body.classList.toggle("dark-mode");
+  
+    const logo = document.getElementById("logoImg");
+  
+    if (document.body.classList.contains("dark-mode")) {
+      logo.src = "anzen dark.jpg"; 
 
-// Set initial theme
-document.addEventListener('DOMContentLoaded', () => {
-    const savedTheme = localStorage.getItem('theme') || 
-        (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-    
-    const html = document.documentElement;
-    html.setAttribute('data-theme', savedTheme);
-    
-    // Set initial logo visibility
-    const lightLogo = document.querySelector('.light-logo');
-    const darkLogo = document.querySelector('.dark-logo');
-    
-    if (savedTheme === 'dark') {
-        lightLogo.style.display = 'none';
-        darkLogo.style.display = 'block';
     } else {
-        lightLogo.style.display = 'block';
-        darkLogo.style.display = 'none';
+      logo.src = "anzen.jpg"; // 
     }
-    
-    // Set initial theme icon
-    const sunIcon = document.querySelector('.theme-toggle .sun');
-    const moonIcon = document.querySelector('.theme-toggle .moon');
-    
-    if (savedTheme === 'dark') {
-        sunIcon.style.display = 'none';
-        moonIcon.style.display = 'block';
-    } else {
-        sunIcon.style.display = 'block';
-        moonIcon.style.display = 'none';
-    }
-    
-    // Listen for system theme changes
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
-        if (!localStorage.getItem('theme')) {
-            const newTheme = e.matches ? 'dark' : 'light';
-            html.setAttribute('data-theme', newTheme);
-            toggleDarkMode();
-        }
-    });
-});
-
+  }
 window.addEventListener('scroll', reveal);
 function reveal() {
     const reveals = document.querySelectorAll('.reveal');
