@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Disaster Management</title>
+    <link rel="stylesheet" href="contact.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+    <header class="site-header">
+        <img src="anzen.jpg" alt="Anzen Logo" class="site-logo">
+    </header>
+    <div class="container">
+        <div class="form-container">
+            <h1>Contact Us</h1>
+            <p class="subtitle">Let's work together to make a difference</p>
+            
+            <form id="contactForm" class="hidden">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+
+                <div class="form-group ngo-fields hidden">
+                    <label for="organization">Organization Name</label>
+                    <input type="text" id="organization" name="organization">
+                </div>
+
+                <div class="form-group ngo-fields hidden">
+                    <label for="website">Website</label>
+                    <input type="url" id="website" name="website">
+                </div>
+
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+
+        <div class="user-type-selector">
+            <div class="option" data-type="ngo">
+                <div class="icon">🏢</div>
+                <h3>NGO</h3>
+                <p>Organization seeking collaboration</p>
+            </div>
+            <div class="option" data-type="individual">
+                <div class="icon">👤</div>
+                <h3>Individual</h3>
+                <p>Person seeking assistance or wanting to help</p>
+            </div>
+        </div>
+
+        <div class="trusted-ngos">
+            <h2>Trusted Partners</h2>
+            <div class="ngo-logos">
+                <div class="logo-item">
+                    <img src="red _cross.png" alt="Red Cross">
+                    <a href="https://www.indianredcross.org/ircs/index.php" target="_blank">Red Cross</a> 
+                </div>
+                <div class="logo-item">
+                    <img src="unicef.jpeg" alt="UNICEF">
+                    <a href="https://www.unicef.org/" target="_blank">UNICEF</a>
+                </div>
+                <div class="logo-item">
+                    <img src="doctors_without_borders.png" alt="Doctors Without Borders">
+                    <a href="https://www.doctorswithoutborders.org/what-we-do/where-we-work/india" target="_blank">Doctors Without Borders</a>
+                     
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <div id="animation-container"></div>
+    <script src="contact.js"></script>
+</body>
+</html>
