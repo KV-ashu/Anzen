@@ -7,7 +7,7 @@ function fun() {
       logo.src = "anzen dark.jpg"; 
 
     } else {
-      logo.src = "anzen.jpg"; // 
+      logo.src = "anzen.jpg"; 
     }
   }
 window.addEventListener('scroll', reveal);
